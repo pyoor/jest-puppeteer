@@ -100,6 +100,7 @@ export const startBrowsers = async ({
   );
   const wsEndpoints = browsers.map((browser) => browser.wsEndpoint());
   saveWsEndpoints(wsEndpoints);
+  browsers.forEach((browser) => browser.disconnect());
   return browsers;
 };
 
@@ -107,9 +108,33 @@ export const closeBrowsers = async (
   config: JestPuppeteerConfig,
   browsers: Browser[],
 ) => {
-  await Promise.all(
-    browsers.map(async (browser) => closeBrowser(config, browser)),
-  );
+  if (config.connect) {
+    await Promise.all(
+      browsers.map(async (browser) => closeBrowser(config, browser)),
+    );
+  }
+
+  const closeRequests: Promise<void>[] = [];
+  const puppeteer = getPuppeteer();
+  const wsEndpoints = readWsEndpoints();
+  while (wsEndpoints.length) {
+    const wsEndpoint = wsEndpoints.pop()!;
+    closeRequests.push(
+      puppeteer
+        .connect({
+          ...(config.launch?.browser === "firefox" && {
+            protocol: "webDriverBiDi",
+          }),
+          ...config.connect,
+          ...config.launch,
+          browserURL: undefined,
+          browserWSEndpoint: wsEndpoint,
+        })
+        .then((browser) => browser.close()),
+    );
+  }
+  await Promise.all(closeRequests);
+  saveWsEndpoints([]);
 };
 
 const getWorkerWsEndpoint = (): string => {
@@ -128,6 +153,7 @@ export const connectBrowserFromWorker = async (
   const wsEndpoint = getWorkerWsEndpoint();
   const puppeteer = getPuppeteer();
   return puppeteer.connect({
+    ...(config.launch?.browser === "firefox" && { protocol: "webDriverBiDi" }),
     ...config.connect,
     ...config.launch,
     browserURL: undefined,

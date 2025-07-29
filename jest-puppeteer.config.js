@@ -9,6 +9,7 @@ process.env.TEST_SERVER_PORT = port;
  */
 const jestPuppeteerConfig = {
   launch: {
+    browser: process.env.BROWSER || "chrome",
     headless: "new",
     args: ["--no-sandbox"],
   },
