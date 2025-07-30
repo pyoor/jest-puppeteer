@@ -1,7 +1,7 @@
 {
   "name": "@mozillasecurity/expect-puppeteer",
   "description": "Assertion toolkit for Puppeteer.",
-  "version": "11.0.0",
+  "version": "11.0.6",
   "type": "commonjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

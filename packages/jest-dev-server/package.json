@@ -1,7 +1,7 @@
 {
   "name": "@mozillasecurity/jest-dev-server",
   "description": "Starts a server before your Jest tests and tears it down after.",
-  "version": "11.0.0",
+  "version": "11.0.6",
   "type": "commonjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -46,11 +46,11 @@
     "rollup-plugin-swc3": "^0.12.1"
   },
   "dependencies": {
+    "@mozillasecurity/spawnd": "^11.0.6",
     "chalk": "^4.1.2",
     "cwd": "^0.10.0",
     "find-process": "^1.4.7",
     "prompts": "^2.4.2",
-    "@mozillasecurity/spawnd": "^11.0.0",
     "tree-kill": "^1.2.2",
     "wait-on": "^8.0.1"
   }

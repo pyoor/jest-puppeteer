@@ -1,7 +1,7 @@
 {
   "name": "@mozillasecurity/jest-puppeteer",
   "description": "Run your tests using Jest & Puppeteer.",
-  "version": "11.0.0",
+  "version": "11.0.6",
   "type": "commonjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -36,8 +36,8 @@
     "puppeteer": ">=19"
   },
   "dependencies": {
-    "@mozillasecurity/expect-puppeteer": "^11.0.0",
-    "@mozillasecurity/jest-environment-puppeteer": "^11.0.0"
+    "@mozillasecurity/expect-puppeteer": "^11.0.6",
+    "@mozillasecurity/jest-environment-puppeteer": "^11.0.6"
   },
   "devDependencies": {
     "rollup": "^4.29.1",

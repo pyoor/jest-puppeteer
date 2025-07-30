@@ -1,7 +1,7 @@
 {
   "name": "@mozillasecurity/spawnd",
   "description": "Spawn a dependent child process.",
-  "version": "11.0.0",
+  "version": "11.0.6",
   "type": "commonjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
