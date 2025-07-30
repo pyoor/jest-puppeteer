@@ -1,5 +1,5 @@
 {
-  "name": "jest-dev-server",
+  "name": "@mozillasecurity/jest-dev-server",
   "description": "Starts a server before your Jest tests and tears it down after.",
   "version": "11.0.0",
   "type": "commonjs",
@@ -50,7 +50,7 @@
     "cwd": "^0.10.0",
     "find-process": "^1.4.7",
     "prompts": "^2.4.2",
-    "spawnd": "^11.0.0",
+    "@mozillasecurity/spawnd": "^11.0.0",
     "tree-kill": "^1.2.2",
     "wait-on": "^8.0.1"
   }

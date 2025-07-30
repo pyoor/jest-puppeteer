@@ -5,7 +5,7 @@ const port = process.env.TEST_SERVER_PORT
 process.env.TEST_SERVER_PORT = port;
 
 /**
- * @type {import('jest-environment-puppeteer').JestPuppeteerConfig}
+ * @type {import('@mozillasecurity/jest-environment-puppeteer').JestPuppeteerConfig}
  */
 const jestPuppeteerConfig = {
   launch: {

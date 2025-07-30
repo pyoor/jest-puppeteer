@@ -1,5 +1,5 @@
 {
-  "name": "jest-environment-puppeteer",
+  "name": "@mozillasecurity/jest-environment-puppeteer",
   "description": "Puppeteer environment for Jest.",
   "version": "11.0.0",
   "type": "commonjs",
@@ -53,7 +53,7 @@
     "chalk": "^4.1.2",
     "cosmiconfig": "^8.3.6",
     "deepmerge": "^4.3.1",
-    "jest-dev-server": "^11.0.0",
+    "@mozillasecurity/jest-dev-server": "^11.0.0",
     "jest-environment-node": "^29.7.0"
   }
 }

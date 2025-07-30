@@ -3,7 +3,7 @@ import { Transform } from "node:stream";
 import { createServer } from "node:net";
 import { promisify } from "node:util";
 import chalk from "chalk";
-import { spawnd, SpawndChildProcess, SpawndOptions } from "spawnd";
+import { spawnd, SpawndChildProcess, SpawndOptions } from "@mozillasecurity/spawnd";
 import cwd from "cwd";
 import waitOn, { WaitOnOptions } from "wait-on";
 import findProcess from "find-process";

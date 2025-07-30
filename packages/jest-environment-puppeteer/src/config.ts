@@ -1,6 +1,6 @@
 import { cosmiconfig } from "cosmiconfig";
 import type { ConnectOptions, PuppeteerLaunchOptions } from "puppeteer";
-import type { Config as JestDevServerConfig } from "jest-dev-server";
+import type { Config as JestDevServerConfig } from "@mozillasecurity/jest-dev-server";
 
 export interface JestPuppeteerConfig {
   /**
